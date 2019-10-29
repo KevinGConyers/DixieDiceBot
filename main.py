@@ -27,6 +27,7 @@ async def on_message(message):
         command = command.split("d")
         dice_number = int(command[0])
         dice_size = int(command[1])
+        print("Recieved a command\n\trolling {0} d{1} in verbose mode".format(dice_number, dice_size))
         await rollDiceVerb(dice_number, dice_size, message.channel)
     elif command_match_obj:
         command_list = message.content.split()
@@ -34,6 +35,7 @@ async def on_message(message):
         command = command.split("d")
         dice_number = int(command[0])
         dice_size = int(command[1])
+        print("Recieved a command\n\trolling {0} d{1}".format(dice_number, dice_size))
         await rollDice(dice_number, dice_size, message.channel)
     elif message.content.startswith("$roll"):
         await message.channel.send("Command syntax: \'$roll [1-9999]d[4-9999] <vV>\'")
