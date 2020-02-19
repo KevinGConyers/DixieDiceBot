@@ -1,9 +1,12 @@
+#!/usr/bin/python3
+
 import discord
 import re
 from random import randint
-from config import *
+from Config import config
 
 client = discord.Client()
+token = config.getToken()
 testmode = False
 
 
